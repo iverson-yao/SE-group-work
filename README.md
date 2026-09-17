@@ -1,21 +1,28 @@
 # Multimodal In-Vehicle Interaction System
 
-Team course project for a software engineering class. The project integrates speech, gesture, and computer-vision modules into a Flask-based vehicle interaction platform with user authentication, vehicle-state controls, driver-risk alerts, and interaction logging.
+Team software engineering project integrating speech, gesture, and computer-vision modules into a Flask-based vehicle interaction platform.
+
+**Tech Stack:** Python · Flask · SQLite · MediaPipe · HTML/CSS · JavaScript
+
+**Highlights**
+- Unified independently developed speech, gesture, and vision modules behind a common application workflow.
+- Added authentication, vehicle-state controls, driver-safety alerts, interaction logging, and a browser-based control interface.
+- My primary focus was system architecture, module interfaces, end-to-end integration, and cross-module debugging.
 
 ## Overview
 
-The system provides a web interface for uploading or capturing multimodal inputs and routes them through independently developed recognition modules. The backend combines module outputs with vehicle-state logic, updates application state, and records interaction history in SQLite.
+The system provides a web interface for multimodal vehicle interaction. User inputs are routed through independently developed recognition modules, combined with vehicle-state logic, and surfaced through application controls and safety alerts. Interaction history is recorded in SQLite for later review.
 
-This repository is a cleaned public mirror for portfolio and resume review. The original team collaboration used file exchange and offline coordination, so GitHub commit history may not fully represent each team member's work.
+This repository is a cleaned public mirror for portfolio and resume review. The original project was completed as a team course project, and GitHub commit history may not fully reflect each teammate's work because parts of the collaboration happened through file exchange and offline coordination.
 
 ## Architecture
 
-- Backend: Flask application with route modules for authentication and system control.
-- Database: SQLite schema for users and interaction logs.
-- Gesture module: MediaPipe-based gesture recognition wrapper and integration interface.
-- Vision module: Driver distraction and fatigue detection integration.
-- Voice module: Voice interaction integration.
-- Frontend: HTML templates, CSS, and JavaScript for login, registration, control, and log views.
+- **Backend:** Flask application with route modules for authentication and system control.
+- **Database:** SQLite schema for users and interaction logs.
+- **Gesture module:** MediaPipe-based gesture recognition wrapper and integration interface.
+- **Vision module:** Driver distraction and fatigue detection integration.
+- **Voice module:** Voice interaction integration.
+- **Frontend:** HTML templates, CSS, and JavaScript for login, registration, controls, and log views.
 
 ## Key Components
 
@@ -28,22 +35,20 @@ This repository is a cleaned public mirror for portfolio and resume review. The 
 
 ## My Contributions
 
-- Designed the overall system framework and module boundaries so teammates could develop speech, gesture, and vision components independently.
-- Defined integration interfaces for multimodal inputs and vehicle-control outputs, then adapted modules when implementations did not fully match the agreed interfaces.
-- Integrated independently developed modules into a runnable Flask application with authentication, session handling, state-based vehicle controls, risk alerts, and interaction logging.
-- Performed system-level debugging and demo validation, identified runtime failures across module boundaries, and coordinated fixes with component owners.
-- Prepared and recorded the final demo after repeated integration testing.
+- Designed the system architecture and module interfaces for a multimodal vehicle interaction platform, enabling parallel development of speech, gesture, and vision components.
+- Integrated independently developed modules into an end-to-end Flask application with vehicle-state controls, driver-safety alerts, interaction logging, and a web control interface.
+- Led system-level debugging and demo validation, identifying cross-module runtime failures and coordinating iterative fixes across component owners.
 
-## Notes on Team Work
+## Team Scope
 
-This was a team project. Individual recognition models and some component-level implementations were developed by different teammates. This mirror focuses on the system architecture, integration work, and end-to-end application behavior that I contributed to.
+This was a team project. Individual recognition models and some component-level implementations were developed by different teammates. The contribution statements above describe the system architecture, integration, and debugging work I personally focused on.
 
 ## Running Locally
 
-The project depends on Python packages for Flask, computer vision, gesture recognition, and model inference. Some model files may be omitted from the public mirror because they are large or were exchanged outside GitHub during the course project.
+Install the dependencies listed in `requirements.txt`, then run:
 
 ```bash
 python app.py
 ```
 
-If model files are unavailable, the Flask application structure and integration code can still be reviewed, but some recognition modules may not run end to end.
+Some recognition modules depend on model files or local runtime resources that may not be included in this public mirror. The Flask application structure, integration interfaces, and control flow can still be reviewed independently.
